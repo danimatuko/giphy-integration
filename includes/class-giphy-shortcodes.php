@@ -37,10 +37,10 @@ class Giphy_Shortcodes
     {
         ob_start();
 ?>
-<form method="get" id="giphy-search-form">
-    <input type="text" name="giphy_search" placeholder="Search GIFs">
-    <button type="submit">Search</button>
-</form>
+        <form method="get" id="giphy-search-form">
+            <input type="text" name="giphy_search" placeholder="Search GIFs">
+            <button type="submit">Search</button>
+        </form>
 <?php
         if (isset($_GET['giphy_search'])) {
             $search_term = sanitize_text_field($_GET['giphy_search']);
