@@ -12,8 +12,10 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-// Fetch the API key from environment variables
-define('GIPHY_API_KEY', getenv('GIPHY_API_KEY') ?: ''); // Provide a default value if not set
+if (!defined('GIPHY_API_KEY')) {
+    exit('API key not defined.');
+}
+
 
 // Include class files
 require_once plugin_dir_path(__FILE__) . 'includes/class-giphy-api.php';
