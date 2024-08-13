@@ -26,9 +26,9 @@ require_once plugin_dir_path(__FILE__) . 'includes/class-giphy-shortcodes.php';
 // Initialize the plugin
 function initialize_giphy_integration()
 {
-    $giphy_api = new Giphy_API();
-    $giphy_rest_endpoints = new Giphy_REST_Endpoints($giphy_api);
-    $giphy_woocommerce = new Giphy_WooCommerce($giphy_api);
-    $giphy_shortcodes = new Giphy_Shortcodes($giphy_api);
+    $giphy_api              = new Giphy_API();
+    $giphy_rest_endpoints   = new Giphy_REST_Endpoints($giphy_api);
+    $giphy_woocommerce      = new Giphy_WooCommerce($giphy_api);
+    $giphy_shortcodes       = new Giphy_Shortcodes($giphy_api);
 }
 add_action('init', 'initialize_giphy_integration');

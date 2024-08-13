@@ -35,17 +35,17 @@ class Giphy_REST_Endpoints
     public function register_rest_routes()
     {
         register_rest_route('giphy/v1', '/trending/', array(
-            'methods' => 'GET',
-            'callback' => [$this, 'get_trending_gifs'],
+            'methods'             => 'GET',
+            'callback'            => [$this, 'get_trending_gifs'],
             'permission_callback' => '__return_true',
         ));
 
         register_rest_route('giphy/v1', '/search/', array(
-            'methods' => 'GET',
+            'methods'  => 'GET',
             'callback' => [$this, 'search_gifs'],
-            'args' => array(
+            'args'     => array(
                 'term' => array(
-                    'required' => true,
+                    'required'          => true,
                     'validate_callback' => function ($param, $request, $key) {
                         return is_string($param);
                     }
