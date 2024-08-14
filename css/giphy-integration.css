@@ -1,0 +1,51 @@
+/* Container for GIFs */
+body .search-results,
+body .trending-gifs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust size as needed */
+  gap: 10px; /* Space between GIFs */
+  padding: 10px; /* Space around the container */
+  box-sizing: border-box;
+}
+
+/* Style individual GIF images */
+body .search-results img,
+body .trending-gifs img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for GIFs */
+body .search-results img:hover,
+body .trending-gifs img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Container for GIFs */
+body .search-results,
+body .trending-gifs {
+  column-count: 3; /* Number of columns */
+  column-gap: 10px; /* Space between columns */
+  padding: 10px; /* Space around the container */
+  box-sizing: border-box;
+}
+
+/* Style individual GIF images */
+body .search-results img,
+body .trending-gifs img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px; /* Space between GIFs in the same column */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for GIFs */
+body .search-results img:hover,
+body .trending-gifs img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}

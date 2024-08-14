@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Class Giphy_Shortcodes
  *
@@ -37,18 +38,20 @@ class Giphy_Shortcodes
     {
         ob_start();
 ?>
-<form method="get" id="giphy-search-form">
-    <input type="text" name="giphy_search" placeholder="Search GIFs">
-    <button type="submit">Search</button>
-</form>
+        <form method="get" id="giphy-search-form">
+            <input type="text" name="giphy_search" placeholder="Search GIFs">
+            <button type="submit">Search</button>
+        </form>
 <?php
         if (isset($_GET['giphy_search'])) {
             $search_term = sanitize_text_field($_GET['giphy_search']);
             $gifs = $this->giphy_api->search_gifs($search_term);
 
-            echo '<div class="search-results">';
+            echo '<div class="giphy-gifs-grid search-results">';
             foreach ($gifs as $gif) {
+                echo '<div class="gif-item">';
                 echo '<img src="' . esc_url($gif['images']['fixed_height']['url']) . '" alt="' . esc_attr($gif['title']) . '">';
+                echo '</div>';
             }
             echo '</div>';
         }
@@ -67,9 +70,11 @@ class Giphy_Shortcodes
         ob_start();
         $gifs = $this->giphy_api->fetch_trending_gifs();
 
-        echo '<div class="trending-gifs">';
+        echo '<div class="giphy-gifs-grid trending-gifs">';
         foreach ($gifs as $gif) {
+            echo '<div class="gif-item">';
             echo '<img src="' . esc_url($gif['images']['fixed_height']['url']) . '" alt="' . esc_attr($gif['title']) . '">';
+            echo '</div>';
         }
         echo '</div>';
 
