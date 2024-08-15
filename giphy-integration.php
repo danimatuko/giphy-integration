@@ -22,6 +22,9 @@ require_once plugin_dir_path(__FILE__) . 'includes/class-giphy-rest-endpoints.ph
 require_once plugin_dir_path(__FILE__) . 'includes/class-giphy-woocommerce.php';
 require_once plugin_dir_path(__FILE__) . 'includes/class-giphy-shortcodes.php';
 
+// Include the styles enqueue script.
+require_once plugin_dir_path(__FILE__) . 'includes/enqueue-styles.php';
+
 // Initialize the plugin
 function initialize_giphy_integration()
 {
@@ -31,12 +34,3 @@ function initialize_giphy_integration()
     $giphy_shortcodes       = new Giphy_Shortcodes($giphy_api);
 }
 add_action('init', 'initialize_giphy_integration');
-
-/**
- * Enqueues plugin styles with high priority.
- */
-function giphy_integration_enqueue_styles()
-{
-    wp_enqueue_style('giphy-integration-styles', plugin_dir_url(__FILE__) . 'css/giphy-integration.css', array(), '1.0', 'all');
-}
-add_action('wp_enqueue_scripts', 'giphy_integration_enqueue_styles');
