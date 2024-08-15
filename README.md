@@ -2,6 +2,8 @@
 
 **A WordPress plugin that integrates the Giphy API to display and sell GIFs using WooCommerce.**
 
+![Giphy Integration Plugin](screenshot.png)
+
 ## Features
 
 - Fetch trending GIFs from Giphy.
